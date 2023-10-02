@@ -1,0 +1,12 @@
+<h2>My Accounts</h2>
+
+<ul class="accounts">
+  <li *ngFor="let account of accounts">
+    <button [class.selected]="account === selectedAccount" type="button" (click)="onSelect(account)">
+      <span class="badge">{{account.id}}</span>
+      <span class="name">{{account.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<app-account-detail [account]="selectedAccount"></app-account-detail>
