@@ -1,0 +1,7 @@
+<h2>Accounts</h2>
+<div class="accounts-menu">
+  <a *ngFor="let account of accounts"
+    routerLink="/detail/{{account.id}}">
+    {{account.name}}
+  </a>
+</div>

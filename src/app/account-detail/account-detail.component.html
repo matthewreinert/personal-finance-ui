@@ -3,8 +3,9 @@
   <h2>{{account.name}} Details</h2>
   <div><span>id: </span>{{account.id}}</div>
   <div>
-    <label for="account-name">account name: </label>
-    <input id="account-name" [(ngModel)]="account.name" placeholder="name">
+    <label for="account-name">Account name: </label>
+    <input id="account-name" [(ngModel)]="account.name" placeholder="Account name">
   </div>
 
 </div>
+<button type="button" (click)="goBack()">go back</button>

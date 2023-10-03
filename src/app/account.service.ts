@@ -7,6 +7,10 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class AccountService {
+  getAccount(id: number): Observable<Account> {
+    const account = ACCOUNTS.find(a => a.id === id)!;
+    return of(account);
+  }
 
   constructor() { }
 
