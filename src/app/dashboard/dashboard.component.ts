@@ -5,7 +5,7 @@ import { AccountService } from '../account.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
   accounts: Account[] = [];
@@ -18,6 +18,6 @@ export class DashboardComponent implements OnInit {
 
   getAccounts(): void {
     this.accountService.getAccounts()
-      .subscribe(accounts => this.accounts = accounts.slice(1, 5));
+      .subscribe(accounts => this.accounts = accounts.slice(0, 5));
   }
 }

@@ -25,6 +25,13 @@ export class AccountDetailComponent {
     this.accountService.getAccount(id).subscribe(account => this.account = account);
   }
 
+  save(): void {
+    if (this.account) {
+      this.accountService.updateAccount(this.account)
+        .subscribe(() => this.goBack());
+    }
+  }
+
   goBack() {
     this.location.back();
   }

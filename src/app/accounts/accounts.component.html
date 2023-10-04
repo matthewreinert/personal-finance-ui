@@ -1,9 +1,16 @@
 <h2>My Accounts</h2>
-
+<div>
+  <label for="new-account">Account name: </label>
+  <input id="new-account" #accountName />
+  <button type="button" class="add-button" (click)="add(accountName.value);accountName.value=''">
+    Add Account
+  </button>
+</div>
 <ul class="accounts">
   <li *ngFor="let account of accounts">
     <a routerLink="/detail/{{account.id}}">
       <span class="badge">{{account.id}}</span> {{account.name}}
     </a>
+    <button type="button" class="delete" title="delete account" (click)="delete(account)">x</button>
   </li>
 </ul>
