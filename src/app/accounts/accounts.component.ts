@@ -17,7 +17,7 @@ export class AccountsComponent {
   }
 
   getAccounts(): void {
-    this.accountService.getAccounts().subscribe(accounts => this.accounts = accounts);
+    this.accountService.getAccounts().subscribe(accounts => this.accounts = accounts.accounts);
   }
 
   add(name: string): void {
