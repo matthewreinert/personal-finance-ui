@@ -8,7 +8,6 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AccountSearchComponent } from './account-search/account-search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { AccountSearchComponent } from './account-search/account-search.componen
     AccountDetailComponent,
     AppComponent,
     DashboardComponent,
-    AccountSearchComponent
   ],
   imports: [
     AppRoutingModule,
