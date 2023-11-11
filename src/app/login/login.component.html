@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+
+  <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <mat-card-content>
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+          #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+        <mat-error *ngIf="username.errors">Username is required!</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+          minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+        <mat-error *ngIf="password.errors?.['required']">Password is required</mat-error>
+        <mat-error *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</mat-error>
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Login</button>
+      <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+        Login failed: {{ errorMessage }}
+      </div>
+    </mat-card-actions>
+  </form>
+
+  <div class="alert alert-success" *ngIf="isLoggedIn">
+    Logged in as {{ roles }}.
+  </div>
+</mat-card>
