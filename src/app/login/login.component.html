@@ -1,0 +1,12 @@
+<h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email: </label>
+    <input id="email" type="email" placeholder="email" formControlName="email" />
+    <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+      <div>Valid email is required.</div>
+    </div>
+  </div>
+  <button type="button" type="submit" [disabled]="!loginForm.valid">Login</button>
+</form>
+<div *ngIf="error" class="alert alert-danger text-left" role="alert">{{ error }}</div>
