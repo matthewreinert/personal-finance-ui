@@ -63,7 +63,9 @@
               "buildTarget": "personal-finance-ui:build:production"
             },
             "development": {
-              "buildTarget": "personal-finance-ui:build:development"
+              "buildTarget": "personal-finance-ui:build:development",
+              "proxyConfig": "proxy.conf.json",
+              "ssl": true
             }
           },
           "defaultConfiguration": "development"

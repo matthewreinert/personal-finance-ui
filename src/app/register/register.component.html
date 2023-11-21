@@ -1,0 +1,19 @@
+<h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Full name: </label>
+    <input id="name" type="text" placeholder="Name" formControlName="name" />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      <div *ngIf="name.errors?.['required']">Name is required.</div>
+    </div>
+  </div>
+  <div>
+    <label for="email">Email: </label>
+    <input id="email" type="email" placeholder="email" formControlName="email" />
+    <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+      <div>Valid email is required.</div>
+    </div>
+  </div>
+  <button type="button" type="submit" [disabled]="!registerForm.valid">Submit</button>
+</form>
+<div *ngIf="error" class="alert alert-danger text-left" role="alert">{{ error }}</div>
